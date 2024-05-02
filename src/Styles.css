@@ -1,0 +1,446 @@
+:root {
+  --font1: 'Helvetica', sans-serif;
+  --font2: 'Helvetica', sans-serif;
+  --font3: 'Architects Daughter', cursive;
+  --orange: #ff9300;
+  --lightorange: #ffcb87;
+  --purple: #9b29ff;
+  --lightpurple: #c487fa;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  position: fixed;
+  background-image: url(../public/background.svg);
+}
+
+.wrapper {
+  padding-top: 20px;
+  position: relative;
+  padding-bottom: 100px;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.navbar {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to bottom right, var(--color1), var(--color2));
+}
+
+h1 {
+  font-family: var(--font2);
+  font-size: 60px;
+}
+
+h2 {
+  font-family: var(--font2);
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: var(--font2);
+  font-size: 30px;
+}
+
+p {
+  font-family: var(--font1);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+ul {
+  text-align: left;
+  margin-left: 20px;
+}
+
+ul ul {
+  margin-left: 40px;
+}
+
+li {
+  font-family: var(--font1);
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#spaced.row {
+  justify-content: space-around;
+}
+
+#left.row {
+  justify-content: start;
+}
+
+#center.row {
+  justify-content: center;
+}
+
+#right.row {
+  justify-content: end;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+
+#left.col {
+  align-items: start;
+}
+
+#right.col {
+  align-items: end;
+}
+
+#reverse.col {
+  flex-direction: column-reverse;
+  justify-content: start;
+}
+
+.imageButton {
+  width: 300px;
+  height: 200px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.imageButton img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+.button {
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  position: relative;
+  background-image: linear-gradient(to bottom right,
+      var(--orange),
+      var(--lightorange));
+}
+
+#small.button {
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  position: relative;
+  background-image: linear-gradient(to bottom right,
+      var(--green),
+      var(--lightgreen));
+}
+
+#small.button * {
+  font-size: 16px;
+}
+
+#selected.button {
+  background-image: linear-gradient(to bottom right, var(--purple), var(--lightpurple));
+}
+
+
+
+img {
+  width: 100%;
+}
+
+.gameDiv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  height: 590px !important;
+  margin: 50;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gameIframe {
+  height: 620px !important;
+  width: 500px !important;
+  max-width: 100%;
+
+}
+
+.lessonCard {
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 5px;
+  max-width: 800px;
+}
+
+#overdue.lessonCard {
+  animation: warning linear infinite 1s;
+}
+
+#today.lessonCard {
+  background-image: linear-gradient(to bottom right, hotpink, orange, yellow, lightgreen, skyblue);
+  animation: rainbow linear infinite 2s;
+}
+
+#upcoming.lessonCard {
+  background-image: linear-gradient(to bottom right, var(--orange), var(--lightorange));
+}
+
+#completed.lessonCard {
+  background-image: linear-gradient(to bottom right, grey, lightgrey);
+}
+
+@keyframes warning {
+  0% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: darkred;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(180deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.submitContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  background-color: yellow;
+  margin-bottom: 50px;
+}
+
+.submitContainer label {
+  font-family: var(--font1);
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px;
+  text-align: center;
+}
+
+.submitContainer input {
+  font-size: 36px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  background-color: var(--lightorange);
+  margin: 20px;
+  width: 80%;
+}
+
+.projectCard {
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 5px;
+  max-width: 800px;
+  background-image: linear-gradient(to bottom right, var(--orange), var(--lightorange));
+}
+
+#font3 {
+  font-family: var(--font3);
+}
+
+.projectContainer {
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 5px;
+  max-width: 800px;
+  background-image: linear-gradient(to bottom right, var(--orange), var(--lightorange));
+}
+
+.rubricContainer {
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  width: 100%;
+
+  max-width: 800px;
+  background-image: linear-gradient(to bottom right, var(--orange), var(--lightorange));
+}
+
+.rubricItem {
+  border-radius: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+
+#correct.rubricItem {
+  animation: complete linear infinite 1s;
+}
+
+@keyframes complete {
+  0% {
+    background-color: greenyellow;
+  }
+
+  50% {
+    background-color: green;
+  }
+
+  100% {
+    background-color: greenyellow;
+  }
+}
+
+#notYet.rubricItem {
+  background-image: linear-gradient(to bottom right, grey, lightgrey);
+}
+
+.msg {
+  width: 80%;
+  background-image: linear-gradient(to bottom right, var(--purple), var(--lightpurple));
+  position: relative;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.msg p {
+  font-family: var(--font3);
+
+}
+
+.msg:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--purple);
+  border-top: 10px solid var(--purple);
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 0px;
+}
+
+textarea {
+  background-color: var(--lightorange);
+  font-size: 20px;
+  width: 100%;
+  height: 300px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+label {
+  font-size: 30px;
+  font-family: var(--font1);
+}
+
+input {
+  font-size: 20px;
+  font-family: var(--font2) !important;
+  background-color: var(--lightorange);
+  border-radius: 12px;
+  margin-left: 20px;
+  height: 40px;
+  width: 100%;
+}
+
+.check {
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  background-color: white;
+}
+
+#correct.check {
+  animation: complete linear infinite 1s;
+}
+
+#incorrect.check {
+  animation: warning linear infinite 1s;
+}
